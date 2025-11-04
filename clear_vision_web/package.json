@@ -7,11 +7,20 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate": "protoc --plugin=protoc-gen-ts_proto=.\\node_modules\\.bin\\protoc-gen-ts_proto.cmd --ts_proto_out=./src/generated ./src/proto/account.proto"
   },
   "dependencies": {
+    "@protobuf-ts/grpcweb-transport": "^2.11.1",
+    "@protobuf-ts/runtime": "^2.11.1",
+    "google-protobuf": "^4.0.0",
+    "grpc-web": "^2.0.2",
+    "keycloak-js": "^26.2.1",
+    "primereact": "^10.9.7",
+    "protobufjs": "^7.5.4",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router": "^7.9.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -23,6 +32,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "ts-proto": "^2.8.3",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "npm:rolldown-vite@7.1.14"

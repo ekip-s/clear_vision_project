@@ -1,0 +1,9 @@
+.logo {
+    height: 40vh;
+}
+
+.accentColor {
+    font-size: var(--font-size-2xl);
+    letter-spacing: var(--space-1);
+    color: var(--color-primary);
+}
