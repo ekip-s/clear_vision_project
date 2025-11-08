@@ -1,0 +1,12 @@
+.menu {
+    border: none;
+    width: 100%;
+}
+
+.menu :global(.p-menuitem-content) {
+    padding: 0.3rem;
+}
+
+.menu :global(.p-menuitem-icon) {
+    margin-right: 0.75rem;
+}

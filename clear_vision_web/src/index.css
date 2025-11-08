@@ -190,8 +190,20 @@ body,
     align-items: center;
 }
 
+.margin_2 {
+    margin: var(--space-2);
+}
+
 .justify_center {
     justify-content: center;
+}
+
+.justify_between {
+    justify-content: space-between;
+}
+
+.width_100 {
+    width: 100%;
 }
 
 .flex_center {

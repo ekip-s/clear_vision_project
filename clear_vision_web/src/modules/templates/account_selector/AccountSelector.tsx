@@ -11,12 +11,20 @@ interface AccountSelectorProps {
 const AccountSelector = ({accounts}:AccountSelectorProps) => {
 
     const [page, setPage] = useState(0);
+    accounts = [...(accounts ?? []),
+        {
+            id: 'new_account',
+            type: "new_account",
+            name: 'Добавить новый счет',
+            currency: "RUB",
+            balance: 0,
+            status: "NEW",
+            createdAt: "",
+        }];
 
     if (!accounts || accounts.length === 0) {
         return <div>No accounts available</div>;
     }
-
-    console.log(accounts);
 
     return (
         <Carousel
