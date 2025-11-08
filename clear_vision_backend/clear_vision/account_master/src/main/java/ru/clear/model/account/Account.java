@@ -1,5 +1,8 @@
 package ru.clear.model.account;
 
+import account.AccountOuterClass.AccountStatus;
+import account.AccountOuterClass.AccountType;
+import account.AccountOuterClass.AccountCurrency;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -52,6 +55,15 @@ public class Account {
     private List<Operation> operations;
     @OneToMany(mappedBy="account", fetch = FetchType.LAZY)
     private List<Recurrent> recurrents;
+
+    public Account(UUID userId, AccountType type, String name, BigDecimal balance, AccountCurrency currency, AccountStatus status) {
+        this.userId = userId;
+        this.type = type;
+        this.name = name;
+        this.balance = balance;
+        this.currency = currency;
+        this.status = status;
+    }
 
     @Override
     public boolean equals(Object o) {

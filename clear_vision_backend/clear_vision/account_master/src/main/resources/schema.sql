@@ -1,7 +1,7 @@
 CREATE TABLE if not exists accounts (
     id UUID PRIMARY KEY,
     user_id UUID NOT NULL,
-    type VARCHAR(20) NOT NULL CHECK (type IN ('current_account', 'credit_card', 'deposit', 'investment', 'credit')),
+    type VARCHAR(20) NOT NULL CHECK (type IN ('CURRENT_ACCOUNT', 'CREDIT_CARD', 'DEPOSIT', 'INVESTMENT', 'CREDIT')),
     name VARCHAR(50) NOT NULL,
     status varchar(20) NOT NULL,
     balance NUMERIC(15,2),
