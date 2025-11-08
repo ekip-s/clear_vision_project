@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
 package account;
 
@@ -9,25 +10,43 @@ service AccountService {
   rpc CreateAccount(CreateAccountRequest) returns (google.protobuf.Empty);
 
   // Метод для получения счетов пользователя
-  rpc GetUserAccounts(GetUserAccountsRequest) returns (UserAccountsResponse);
+  rpc GetUserAccounts(google.protobuf.Empty) returns (UserAccountsResponse);
 }
 
 message CreateAccountRequest {
   int32 user_id = 1;
-  string account_type = 2;
+  AccountType type = 2;
   double initial_balance = 3;
 }
 
-message GetUserAccountsRequest {
-  int32 user_id = 1;
-}
-
 message Account {
-  int32 account_id = 1;
-  string account_type = 2;
-  double balance = 3;
+  string id = 1;
+  string user_id = 2;
+  AccountType type = 3;
+  string name = 4;
+  string balance = 5;
+  AccountCurrency currency = 6;
+  AccountStatus status = 7;
+  google.protobuf.Timestamp created_at = 8;
 }
 
 message UserAccountsResponse {
   repeated Account accounts = 1;
+}
+
+enum AccountType {
+  CURRENT_ACCOUNT = 0;
+  CREDIT_CARD = 1;
+  DEPOSIT = 2;
+  INVESTMENT = 3;
+  CREDIT = 4;
+}
+
+enum AccountStatus {
+  NEW = 0;
+}
+
+enum AccountCurrency {
+  RUB = 0;
+  USD = 1;
 }

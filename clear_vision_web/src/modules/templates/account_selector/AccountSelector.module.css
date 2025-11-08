@@ -1,0 +1,26 @@
+.carousel {
+    padding: 1rem 0;
+}
+:global(.p-carousel-item) {
+    padding: 0 0.5rem;
+    flex-basis: calc(25% - 1rem);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    :global(.p-carousel-item) {
+        flex-basis: calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    :global(.p-carousel-item) {
+        flex-basis: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 560px) {
+    :global(.p-carousel-item) {
+        flex-basis: 100%;
+    }
+}

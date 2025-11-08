@@ -3,10 +3,12 @@ import logo from "../../assets/clear_info_1.png";
 import {Card} from "primereact/card";
 import {useAuth} from "../../keycloak/useAuth.ts";
 import {Button} from "primereact/button";
+import {useNavigate} from "react-router";
 
 const HomePage = () => {
 
-    const {isAuthenticated} = useAuth();
+    const {isAuthenticated, getToken} = useAuth();
+    const navigate = useNavigate();
 
     return <section className={`indentations ${styles.homePage}`}>
         <Card className={`flex_center card`}>
@@ -22,6 +24,7 @@ const HomePage = () => {
             <Button
                 label={isAuthenticated ? "Перейти к финансам" : "Начать учитывать финансы"}
                 className={`button`}
+                onClick={() => navigate("/info")}
             />
         </div>
     </section>
