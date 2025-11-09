@@ -1,18 +1,18 @@
 import AccountSelector from "../../templates/account_selector/AccountSelector.tsx";
-import {useGetAccounts} from "../../../api/useGetAccounts.ts";
+import {useAccounts} from "../../../api/useAccounts.ts";
 import {Card} from "primereact/card";
 import LocalMenu from "../../molecules/local_menu/LocalMenu.tsx";
 import OperationsList from "../../templates/operations/OperationsList.tsx";
 
 const InfoPage = () => {
-    const {data, isLoading, error} = useGetAccounts();
+    const {data, isLoading, error} = useAccounts();
 
     if (isLoading) {
         return <div>Loading...</div>;
     }
 
-    if (error) {
-        return <div>Error: {error.message}</div>;
+    if (error || data === undefined) {
+        return <div>Error: {data === undefined ? "В ответе нет данных" : error.message}</div>;
     }
 
     return <div className={`indentations`}>
@@ -22,7 +22,7 @@ const InfoPage = () => {
 
             </Card>
             <Card className={`card width_100`}>
-                <LocalMenu />
+                <LocalMenu accounts={data} />
             </Card>
         </div>
         <OperationsList />

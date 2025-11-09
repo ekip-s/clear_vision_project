@@ -9,7 +9,11 @@
 }
 
 .positively {
-
+    border: 2px solid var(--color-green);
+    color: var(--color-green);
+    font-weight: bold;
+    padding: 0.3rem;
+    border-radius: var(--radius-sm);
 }
 
 .negative {

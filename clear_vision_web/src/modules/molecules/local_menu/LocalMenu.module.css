@@ -10,3 +10,15 @@
 .menu :global(.p-menuitem-icon) {
     margin-right: 0.75rem;
 }
+
+.dialogContent {
+    position: fixed;
+    top: 20vh;
+    width: 40vw;
+}
+
+.dialogContentHeader {
+    background-color: var(--color-gray-300);
+    color: var(--color-btn-primary-text);
+    padding: var(--space-4);
+}

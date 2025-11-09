@@ -30,6 +30,10 @@ public class OperationCategory {
     @Column(name = "name", nullable = false)
     private String name;
 
+    public OperationCategory(UUID id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

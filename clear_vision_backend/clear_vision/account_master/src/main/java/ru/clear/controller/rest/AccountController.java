@@ -2,6 +2,7 @@ package ru.clear.controller.rest;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import io.swagger.v3.oas.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,14 @@ public class AccountController {
     private final AccountService accountService;
     private final AccountMapper accountMapper;
 
+    @Operation(
+            summary = "Счета пользователя",
+            description = "Можно получить мои счета," +
+                    " если первое обращение то будет создан дефолтный счет."
+    )
     @GetMapping
     public List<AccountResponse> getUserAccounts() {
+        log.info("GET: account_controller getUserAccounts");
         return accountMapper.toResponseList(accountService.getUserAccounts());
     }
 }
