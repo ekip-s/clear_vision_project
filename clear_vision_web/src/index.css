@@ -59,6 +59,7 @@
     --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
     --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
     --color-error: var(--color-red-500);
+    --color-green: green;
     --color-success: var(--color-teal-500);
     --color-warning: var(--color-orange-500);
     --color-info: var(--color-slate-500);
@@ -146,6 +147,10 @@
     --indentation: 5%;
 }
 
+.fs_sm {
+    font-size: var(--font-size-sm);
+}
+
 .button {
     padding: var(--space-4);
 }
@@ -178,6 +183,10 @@ body,
     height: 100%;
 }
 
+.width_100 {
+    width: 100%;
+}
+
 .height_50 {
     height: 50%;
 }
@@ -200,6 +209,10 @@ body,
 
 .justify_between {
     justify-content: space-between;
+}
+
+.justify_end {
+    justify-content: flex-end;
 }
 
 .width_100 {
@@ -239,4 +252,39 @@ body,
 
 .label_box label {
     font-weight: bold;
+}
+
+.gap_5 {
+    gap: 5px;
+}
+
+.block {
+    display: block;
+}
+
+.p-dropdown-clear-icon {
+    top: 15%;
+    position: absolute;
+}
+
+.inputNumber {
+    margin-top: var(--space-1);
+    padding: var(--space-2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown {
+    margin-top: var(--space-1);
+    padding: var(--space-2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn_block {
+    padding: var(--space-10);
 }

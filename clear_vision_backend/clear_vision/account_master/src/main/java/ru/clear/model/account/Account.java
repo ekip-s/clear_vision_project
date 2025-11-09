@@ -65,6 +65,10 @@ public class Account {
         this.status = status;
     }
 
+    public Account(UUID id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

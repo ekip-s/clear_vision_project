@@ -8,7 +8,7 @@ const accountService = axios.create({
     timeout: 10000,
 });
 
-export const useGetAccounts = () => {
+export const useAccounts = () => {
     const {getToken} = useAuth();
 
     return useQuery<Account[]>({

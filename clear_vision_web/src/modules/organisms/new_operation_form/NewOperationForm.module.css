@@ -1,0 +1,24 @@
+.newOperationForm {
+    padding: 4px;
+}
+
+.container1 {
+    flex: 3;
+    min-width: 105px;
+}
+
+.container2 {
+    flex: 5;
+}
+
+.inputTextarea {
+    padding: 4px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 15vh;
+}
+
+.textBlock {
+    margin-top: 10px;
+}

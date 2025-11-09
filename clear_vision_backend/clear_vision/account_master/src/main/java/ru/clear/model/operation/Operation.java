@@ -33,6 +33,8 @@ public class Operation {
     @ManyToOne
     @JoinColumn(name="account_id", nullable=false)
     private Account account;
+    @Column(name = "user_id")
+    private UUID userId;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private OperationCategory category;
@@ -46,6 +48,16 @@ public class Operation {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    public Operation(Account account,  AddOperation addOperation, UUID userId) {
+        this.account = account;
+        this.userId = userId;
+        this.category = addOperation.getCategoryId() == null ? null : new OperationCategory(addOperation.getCategoryId());
+        this.status = OperationStatus.DONE;
+        this.amount = addOperation.getAmount();
+        this.description = addOperation.getDescription();
+        this.createdAt = LocalDateTime.now();
+    }
 
     @Override
     public boolean equals(Object o) {

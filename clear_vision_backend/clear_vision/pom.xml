@@ -12,6 +12,7 @@
     <modules>
         <module>interface-grpc</module>
         <module>account_master</module>
+        <module>exception_data</module>
     </modules>
 
     <parent>
